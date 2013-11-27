@@ -1,0 +1,8 @@
+1SERVER=localhost;
+2SERVER2=localhost;
+3DATABASE=sistemapos;
+4DATABASE2=sistemapos;
+5USER=root;
+6USER2=root;
+7PASS=caromatias;
+8PASS2=caromatias;
