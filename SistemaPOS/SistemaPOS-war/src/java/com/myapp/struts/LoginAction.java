@@ -5,7 +5,14 @@
 
 package com.myapp.struts;
 
-import com.sistemapos.conexion.Conexion;
+import com.sistemapos.sistemadatos.dto.UsuarioDTO;
+import com.sistemapos.sistemadatos.ejb.UsuarioEjbLocal;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -21,6 +28,8 @@ import org.apache.struts.action.ActionMapping;
 public class LoginAction extends Action {
     
     /* forward name="success" path="" */
+    private String nombre_user;
+    private String pass;
     private static final String SUCCESS = "success";
     private static final String FALLO = "failure";
     
@@ -33,17 +42,35 @@ public class LoginAction extends Action {
      * @throws java.lang.Exception
      * @return
      */
+    @EJB
+    private UsuarioEjbLocal usuario;
+    private UsuarioDTO user = new UsuarioDTO();
+    
+    public String Login(String nombre,String pass) {
+        try {
+            user.setNombre_user(nombre);
+            user.setPass(pass);
+
+            int nn = usuario.agregarUsuario(user);
+            System.out.println(nn);
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        
-        //extrayendo datos del usuario
+        //extrayendo dantos del usuario
         LoginForm formBean = (LoginForm)form;
         String name = formBean.getName();
         String email = formBean.getEmail();
-        JOptionPane.showMessageDialog(null, "Lo que se ve", "Titulo", JOptionPane.ERROR_MESSAGE);
         
+        
+        Login(name, email);
         
         //generar validación
         if ((name == null) ||
@@ -54,5 +81,9 @@ public class LoginAction extends Action {
             return mapping.findForward(FALLO);
         }
         return mapping.findForward(SUCCESS);
+        
+        
+        
+        
     }
 }
