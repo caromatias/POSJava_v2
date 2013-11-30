@@ -5,7 +5,6 @@
 package com.myapp.struts;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ejb.EJB;
 import com.sistemapos.sistemadatos.ejb.UsuarioEjbLocal;
 import com.sistemapos.sistemadatos.dto.UsuarioDTO;
 import java.util.List;
@@ -57,19 +56,6 @@ public class UsuarioBean extends org.apache.struts.action.ActionForm {
         }
         return null;
     }
-    public ActionForward execute( ActionMapping mapping, ActionForm form,
-                                                     HttpServletRequest request, HttpServletResponse response )
-      {
-            String AccionError = "";
- 
-            //Aquí irá el código de la acción
-           
-            // Devolver a la vista de exito o fallo segun el resultado de AccionError
-            return (!AccionError.equals(""))
-                              ? mapping.findForward("fallo")
-                              : mapping.findForward("exito");
-           
-      }
 
     /**
      * @return the email

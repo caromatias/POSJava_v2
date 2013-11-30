@@ -21,17 +21,10 @@
 
     <action-mappings>
         
-            
-        <action path="busqueda"
-            type="com.myapp.struts.UsuarioBean"
-            input="/WEB-INF/home.jsp"
-            name="UsuarioBean"
-            scope="request"
-            validate="false">
-            <forward name="exito"
-                  path="/WEB-INF/jsp/busquedaExito.jsp"/>
-            <forward name="fallo" path="/WEB-INF/jsp/busquedaFallo.jsp"/>
-        </action>    
+        <action name="UsuarioBean" path="/logueo" scope="request" type="com.myapp.struts.UsuarioBean" validate="false">
+            <forward name="success" path="/WEB-INF/home.jsp"/>
+            <forward name="failure" path="/login.jsp"/>
+            </action> 
             
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
