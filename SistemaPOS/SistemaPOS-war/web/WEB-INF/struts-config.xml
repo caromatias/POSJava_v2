@@ -7,10 +7,8 @@
 
 <struts-config>
     <form-beans>
-        <form-bean name="DAO" type="com.sistemapos.conexion.DAO"/>
-        <form-bean name="DAOUser" type="com.myapp.struts.DAOUser"/>
-        <form-bean name="LoginForm" type="com.myapp.struts.LoginForm"/>
-        <form-bean name="UsuarioBean" type="com.myapp.struts.UsuarioBean"/>
+        <form-bean name="UsuarioBean"
+                  type="com.myapp.struts.UsuarioBean" />
     </form-beans>
     
     <global-exceptions>
@@ -22,10 +20,18 @@
     </global-forwards>
 
     <action-mappings>
-        <action name="UsuarioBean" path="/login" scope="request" type="com.myapp.struts.UsuarioBean" validate="false">
-            <forward name="success" path="/WEB-INF/home.jsp"/>
-            <forward name="failure" path="/login.jsp"/>
-            </action>
+        
+            
+        <action path="busqueda"
+            type="com.myapp.struts.UsuarioBean"
+            input="/WEB-INF/home.jsp"
+            name="UsuarioBean"
+            scope="request"
+            validate="false">
+            <forward name="exito"
+                  path="/WEB-INF/jsp/busquedaExito.jsp"/>
+            <forward name="fallo" path="/WEB-INF/jsp/busquedaFallo.jsp"/>
+        </action>    
             
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>

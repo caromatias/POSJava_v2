@@ -57,29 +57,19 @@ public class UsuarioBean extends org.apache.struts.action.ActionForm {
         }
         return null;
     }
-    public ActionForward execute(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        
-        //extrayendo datos del usuario
-        LoginForm formBean = (LoginForm)form;
-        String name = formBean.getName();
-        String email = formBean.getEmail();
-        
-        JOptionPane.showMessageDialog(null, "Lo que se ve", "Titulo", JOptionPane.ERROR_MESSAGE);
-        Login();
-        
-        
-        //generar validación
-        if ((name == null) ||
-                (email==null) ||
-                name.equals("") ||
-                email.indexOf("@")==-1){
-            formBean.setError();
-            return mapping.findForward(FALLO);
-        }
-        return mapping.findForward(SUCCESS);
-    }
+    public ActionForward execute( ActionMapping mapping, ActionForm form,
+                                                     HttpServletRequest request, HttpServletResponse response )
+      {
+            String AccionError = "";
+ 
+            //Aquí irá el código de la acción
+           
+            // Devolver a la vista de exito o fallo segun el resultado de AccionError
+            return (!AccionError.equals(""))
+                              ? mapping.findForward("fallo")
+                              : mapping.findForward("exito");
+           
+      }
 
     /**
      * @return the email

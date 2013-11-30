@@ -23,7 +23,7 @@
     </head>
     <body>
         <div id="contentLogin">
-            <html:form action="/login" styleClass="form-horizontal">
+            <html:form action="/logueo" styleClass="form-horizontal">
                 <bean:write name="LoginForm" property="error" filter="false"/>
                 <div class="control-group">
                     <label class="control-label" for="inputEmail">Email</label>
