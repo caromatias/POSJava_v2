@@ -10,6 +10,7 @@ import com.sistemapos.sistemadatos.dto.UsuarioDTO;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMessage;
