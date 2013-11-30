@@ -8,6 +8,7 @@ package com.myapp.struts;
 import com.sistemapos.conexion.Conexion;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -36,13 +37,13 @@ public class LoginAction extends Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
+        
         //extrayendo datos del usuario
         LoginForm formBean = (LoginForm)form;
         String name = formBean.getName();
         String email = formBean.getEmail();
+        JOptionPane.showMessageDialog(null, "Lo que se ve", "Titulo", JOptionPane.ERROR_MESSAGE);
         
-        Conexion con = new Conexion();
-        con.Conectar();
         
         //generar validación
         if ((name == null) ||

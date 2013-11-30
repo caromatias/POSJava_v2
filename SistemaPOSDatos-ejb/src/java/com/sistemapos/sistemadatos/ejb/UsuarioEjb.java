@@ -36,11 +36,18 @@ public class UsuarioEjb implements UsuarioEjbLocal
        MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
        return dao.getUsuarioDAO().actualizar(u);       
     }
+    
     @Override
     public List<UsuarioDTO> getAll()
     {
        MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
        return dao.getUsuarioDAO().obtenerTodo();
+    }
+    @Override
+    public List<UsuarioDTO> login()
+    {
+       MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
+       return dao.getUsuarioDAO().login();
     }
 
 }

@@ -19,4 +19,5 @@ public interface UsuarioEjbLocal
     int eliminar(UsuarioDTO u);
     int actualizar(UsuarioDTO u);
     List<UsuarioDTO> getAll();
+    List<UsuarioDTO> login();
 }

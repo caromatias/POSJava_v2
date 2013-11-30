@@ -208,4 +208,54 @@ public class MySqlUsuarioDAO implements UsuarioDAOInterface
         }
         return lista;
     }
+    
+    public List<UsuarioDTO> login() 
+    {
+        Connection conn = null;
+        CallableStatement stmt = null;
+        ResultSet rs = null;
+        List<UsuarioDTO> lista = new ArrayList<UsuarioDTO>();
+        
+        try 
+        {
+            conn = MySqlDAOFactory.createConnection("jdbc/duoc");
+
+            String sql = "select * from usuario;";
+
+            stmt = conn.prepareCall(sql);
+
+            rs = stmt.executeQuery();
+            
+            while(rs.next())
+            {
+                UsuarioDTO user = new UsuarioDTO();
+                user.setCod_user(rs.getString(1));
+                user.setNombre_user(rs.getString(2));
+                user.setTipo_user(rs.getInt(3));
+                user.setEdad(rs.getInt(4));
+                user.setPass(rs.getString(5));
+                lista.add(user);
+            }
+
+        } 
+        catch (NamingException e) 
+        {
+            e.printStackTrace();
+        } 
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+        } 
+        finally 
+        {
+            try {
+                     MySqlDAOFactory.closeAll(conn, stmt, rs);
+                } 
+            catch (Exception e) 
+                {
+                     e.printStackTrace();
+                }
+        }
+        return lista;
+    }
 }
