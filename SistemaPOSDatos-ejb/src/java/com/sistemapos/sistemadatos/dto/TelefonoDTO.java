@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class TelefonoDTO 
+public class TelefonoDTO implements Serializable
 {
     private int id_tel;
     private String cod_dueno;

@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class ProveedorDTO 
+public class ProveedorDTO implements Serializable
 {
     private String cod_prov;
     private String nombre_prov;

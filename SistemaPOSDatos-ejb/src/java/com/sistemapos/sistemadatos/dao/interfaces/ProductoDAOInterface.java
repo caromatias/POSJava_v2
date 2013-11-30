@@ -6,14 +6,18 @@
 
 package com.sistemapos.sistemadatos.dao.interfaces;
 
-import com.sistemapos.sistemadatos.dto.Master_StockDTO;
+import com.sistemapos.sistemadatos.dto.ProductoDTO;
 import java.util.List;
 
 /**
  *
- * @author Alto Andes
+ * @author dafro_000
  */
-public interface Master_StockDAOInterface {
-    int ingresar(Master_StockDTO u);
-    List<Master_StockDTO> obtenerTodo();
+public interface ProductoDAOInterface {
+    
+    int ingresar(ProductoDTO u);
+    int eliminar(ProductoDTO u);
+    int actualizar(ProductoDTO u);
+    List<ProductoDTO> obtenerTodo();
+
 }

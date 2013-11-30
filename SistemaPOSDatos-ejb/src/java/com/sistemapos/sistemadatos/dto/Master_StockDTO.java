@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Master_StockDTO 
+public class Master_StockDTO implements Serializable
 {
     private String fecha_stock;
     private String cod_prod;

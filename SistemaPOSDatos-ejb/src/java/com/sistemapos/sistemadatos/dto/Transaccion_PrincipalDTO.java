@@ -4,13 +4,14 @@
  */
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Si
  */
-public class Transaccion_PrincipalDTO {
+public class Transaccion_PrincipalDTO implements Serializable{
     private long trans_principal_id_trans;//pk Transacion principal.
     private String trans_principal_fecha_trans;//pk transacion principal.
     private String hora_transacion;

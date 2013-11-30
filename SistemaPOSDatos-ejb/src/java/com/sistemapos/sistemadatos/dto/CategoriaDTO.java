@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class CategoriaDTO 
+public class CategoriaDTO implements Serializable
 {
     private String cod_cat;
     private String nombre_cat;

@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Stock_DiaDTO
+public class Stock_DiaDTO implements Serializable
 {
     private String cod_prod;
     private int cantidad;

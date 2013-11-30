@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Tipo_InformeDTO 
+public class Tipo_InformeDTO implements Serializable
 {
     private int tipo_inf;
     private String nombre_informe;

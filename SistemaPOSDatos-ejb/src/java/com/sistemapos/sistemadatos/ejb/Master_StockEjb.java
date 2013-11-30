@@ -20,20 +20,11 @@ import javax.ejb.Stateless;
 @Stateless
 public class Master_StockEjb implements Master_StockEjbLocal {
 
+     @Override
     public int ingresar(Master_StockDTO u) 
     {
        MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
        return dao.getMaster_StockDAO().ingresar(u);       
-    }
-     public int eliminar(Master_StockDTO u) 
-    {
-       MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
-       return dao.getMaster_StockDAO().eliminar(u);       
-    }
-     public int actualizar(Master_StockDTO u) 
-    {
-       MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
-       return dao.getMaster_StockDAO().actualizar(u);       
     }
     @Override
     public List<Master_StockDTO> getAll()

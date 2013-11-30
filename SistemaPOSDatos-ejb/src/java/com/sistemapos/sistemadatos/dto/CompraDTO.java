@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class CompraDTO 
+public class CompraDTO implements Serializable
 {
     private int secuencia;
     private long trans_principal_id_trans;

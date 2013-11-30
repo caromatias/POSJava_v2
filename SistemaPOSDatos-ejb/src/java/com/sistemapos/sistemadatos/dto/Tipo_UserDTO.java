@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Tipo_UserDTO 
+public class Tipo_UserDTO implements Serializable
 {
     private int cod_tip_user;
     private String nombre_tipo;

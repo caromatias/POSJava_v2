@@ -4,10 +4,11 @@
  */
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class InventarioDTO {
+public class InventarioDTO implements Serializable{
     private long trans_principal_id_trans;//fk transacion principal.
     private String trans_principal_fecha_trans;//fk transacion principal;
     private int total_prod;

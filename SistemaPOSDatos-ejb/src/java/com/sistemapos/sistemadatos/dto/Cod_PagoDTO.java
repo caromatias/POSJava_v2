@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
  
-public class Cod_PagoDTO 
+public class Cod_PagoDTO implements Serializable
 {
     private int cod_pag;
     private String nombre_pago;

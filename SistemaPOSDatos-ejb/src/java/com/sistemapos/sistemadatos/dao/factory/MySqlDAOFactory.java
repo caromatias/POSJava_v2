@@ -13,6 +13,7 @@ import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlDevolucionDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlInformesDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlInventarioDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlMaster_StockDAO;
+import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlProductoDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlProveedorDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlStock_DiaDAO;
 import com.sistemapos.sistemadatos.dao.impl.mysql.MySqlTelefonoDAO;
@@ -141,6 +142,10 @@ public class MySqlDAOFactory extends DAOFactory
     public MySqlMaster_StockDAO getMaster_StockDAO()
     {
         return new MySqlMaster_StockDAO();
+    }
+    public MySqlProductoDAO getProductoDAO()
+    {
+        return new MySqlProductoDAO();
     }
     public MySqlProveedorDAO getProveedorDAO()
     {

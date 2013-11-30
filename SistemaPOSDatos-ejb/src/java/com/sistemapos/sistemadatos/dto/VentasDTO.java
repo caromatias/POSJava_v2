@@ -4,13 +4,14 @@
  */
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Si
  */
-public class VentasDTO {
+public class VentasDTO implements Serializable{
 
     private long secuencia;//pk Ventas
     private long tansacion_principal_id_trans;//FK transacion principal.

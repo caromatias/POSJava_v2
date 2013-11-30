@@ -6,18 +6,19 @@
 
 package com.sistemapos.sistemadatos.ejb;
 
-import com.sistemapos.sistemadatos.dto.Master_StockDTO;
+import com.sistemapos.sistemadatos.dto.ProductoDTO;
 import java.util.List;
 import javax.ejb.Local;
 
 /**
  *
- * @author cmeza
+ * @author dafro_000
  */
 @Local
-public interface Master_StockEjbLocal {
+public interface ProductoEjbLocal {
     
-    int ingresar(Master_StockDTO u);
-    List<Master_StockDTO> getAll();
+    int ingresar(ProductoDTO u);
+    int eliminar(ProductoDTO u);
+    int actualizar(ProductoDTO u);
+    List<ProductoDTO> getAll();
 }
-

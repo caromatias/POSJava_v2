@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class DevolucionDTO 
+public class DevolucionDTO implements Serializable
 {
     private long secuencia;
     private long trans_principal_id_trans;//Fk trans_principal

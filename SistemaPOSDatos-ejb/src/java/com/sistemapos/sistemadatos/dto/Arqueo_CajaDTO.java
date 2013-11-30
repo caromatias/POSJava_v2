@@ -1,10 +1,11 @@
 
 package com.sistemapos.sistemadatos.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
-public class Arqueo_CajaDTO 
+public class Arqueo_CajaDTO implements Serializable
 {
     private long trans_principal_id_trans;//fk Trans principal
     private String trans_principal_fecha_trans;//fk Trans principal
