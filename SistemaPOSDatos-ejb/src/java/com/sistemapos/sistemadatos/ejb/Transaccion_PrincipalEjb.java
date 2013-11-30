@@ -8,7 +8,6 @@ package com.sistemapos.sistemadatos.ejb;
 
 import com.sistemapos.sistemadatos.dao.factory.DAOFactory;
 import com.sistemapos.sistemadatos.dao.factory.MySqlDAOFactory;
-import com.sistemapos.sistemadatos.dto.Tipo_UserDTO;
 import com.sistemapos.sistemadatos.dto.Transaccion_PrincipalDTO;
 import java.util.List;
 import javax.ejb.Stateless;

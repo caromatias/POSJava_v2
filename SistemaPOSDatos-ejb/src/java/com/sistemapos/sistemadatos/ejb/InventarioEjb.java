@@ -19,20 +19,18 @@ import javax.ejb.Stateless;
 @Stateless
 public class InventarioEjb implements InventarioEjbLocal {
 
+    
+     @Override
     public int ingresar(InventarioDTO u) 
     {
        MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
        return dao.getInventarioDAO().ingresar(u);       
     }
+    @Override
      public int eliminar(InventarioDTO u) 
     {
        MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
        return dao.getInventarioDAO().eliminar(u);       
-    }
-     public int actualizar(InventarioDTO u) 
-    {
-       MySqlDAOFactory dao = (MySqlDAOFactory)DAOFactory.getDAOFactory(DAOFactory.type.MYSQL);
-       return dao.getInventarioDAO().actualizar(u);       
     }
     @Override
     public List<InventarioDTO> getAll()

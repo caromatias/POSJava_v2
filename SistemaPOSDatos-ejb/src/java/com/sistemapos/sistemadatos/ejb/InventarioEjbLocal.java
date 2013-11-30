@@ -19,6 +19,5 @@ public interface InventarioEjbLocal {
     
     int ingresar(InventarioDTO u);
     int eliminar(InventarioDTO u);
-    int actualizar(InventarioDTO u);
     List<InventarioDTO> getAll();
 }
