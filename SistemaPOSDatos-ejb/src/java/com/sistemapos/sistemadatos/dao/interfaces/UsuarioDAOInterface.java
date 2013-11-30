@@ -11,5 +11,6 @@ public interface UsuarioDAOInterface
     int eliminar(UsuarioDTO u);
     int actualizar(UsuarioDTO u);
     List<UsuarioDTO> obtenerTodo();
+    List<UsuarioDTO> login();
     
 }
