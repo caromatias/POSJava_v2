@@ -42,10 +42,6 @@ public class ClienteEjb implements ClienteEjbLocal
        return dao.getClienteDAO().actualizar(u);       
     }
     
-    /**
-     *
-     * @return
-     */
     @Override
     public List<ClienteDTO> getAll()
     {
